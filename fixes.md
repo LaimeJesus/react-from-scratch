@@ -105,5 +105,38 @@ add the following config in the resolve property
 
 ---
 
+### adding jest and enzyme for testing 
+`npm install --save-dev jest babel-jest`
+`npm install --save-dev enzyme enzyme-adapter-react-16 enzyme-to-json`
+update package.json
+```json
+{
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": ["./src/setupTests.js"]
+  }
+}
+``` 
+add jest to eslint config
+
+`env:{"jest": true}`
+
+#### fixing jest version
+* [main problem babel 6 is not working with jest](https://stackoverflow.com/questions/47830273/babel-plugin-preset-files-are-not-allowed-to-export-objects-only-functions)
+* stop using npm, and use only yarn to install packages
+* install the following packages and modify the babelrc
+```
+'@babel/preset-env',
+'@babel/preset-react'
+```
+* install the following babel packages
+```
+"@babel/plugin-transform-arrow-functions",
+"@babel/plugin-proposal-object-rest-spread",
+"@babel/plugin-proposal-class-properties"
+```
+* [assignment and define property, FYI not necessary](http://2ality.com/2012/08/property-definition-assignment.html)
+* [practices to follow](https://alligator.io/react/testing-react-redux-with-jest-enzyme/)
+
 ### redux
 * [main article](https://levelup.gitconnected.com/learn-redux-by-building-redux-from-scratch-dcbcbd31b0d0)
