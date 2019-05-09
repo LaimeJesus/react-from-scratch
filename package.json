@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js",
-    "eslint": "./node_modules/.bin/eslint 'src/**/*.js' 'src/**/*.js'",
+    "eslint": "./node_modules/.bin/eslint 'src/**/*.js' 'src/**/*.jsx'",
     "eslint:fix": "npm run eslint -- --fix"
   },
   "author": "",
